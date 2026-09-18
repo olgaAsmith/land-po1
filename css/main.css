@@ -71,21 +71,8 @@ a {
   transition: color 0.25s ease;
 }
 
-a .arrow {
-  -webkit-transition: -webkit-filter 0.25s ease;
-  transition: -webkit-filter 0.25s ease;
-  -o-transition: filter 0.25s ease;
-  transition: filter 0.25s ease;
-  transition: filter 0.25s ease, -webkit-filter 0.25s ease;
-}
-
-a:hover {
+a:hover:not(.button):not(.header__logo):not(.footer__logo) {
   color: green;
-}
-
-a:hover .arrow {
-  -webkit-filter: invert(34%) sepia(94%) saturate(600%) hue-rotate(90deg) brightness(90%);
-  filter: invert(34%) sepia(94%) saturate(600%) hue-rotate(90deg) brightness(90%);
 }
 
 .container {
@@ -166,12 +153,11 @@ a:hover .arrow {
 
   white-space: nowrap;
 
-  -webkit-transition: all 0.25s ease;
+  -webkit-transition: opacity 0.25s ease;
 
-  -o-transition: all 0.25s ease;
+  -o-transition: opacity 0.25s ease;
 
-  transition: all 0.25s ease;
-  will-change: transform;
+  transition: opacity 0.25s ease;
 
   cursor: pointer;
 }
@@ -194,15 +180,8 @@ a:hover .arrow {
   gap: 12px;
 }
 
-.button--green:hover {
-  color: var(--color-ivory);
-  -webkit-transform: scale(1.01);
-  -ms-transform: scale(1.01);
-  transform: scale(1.01);
-}
-
-.button--transparent:hover {
-  color: green;
+.button:hover {
+  opacity: 0.85;
 }
 
 .arrow {
@@ -1300,6 +1279,14 @@ a:hover .arrow {
   height: 40px;
   left: 0;
   top: -60px;
+
+  -webkit-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.footer__logo:hover {
+  opacity: 0.85;
 }
 
 .footer__contacts--bottom {
@@ -1399,13 +1386,14 @@ a:hover .arrow {
   align-items: center;
 }
 
-.header__search,
 .header__logo {
-  -webkit-transition: -webkit-transform 0.25s ease;
-  transition: -webkit-transform 0.25s ease;
-  -o-transition: transform 0.25s ease;
-  transition: transform 0.25s ease;
-  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+  -webkit-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.header__logo:hover {
+  opacity: 0.85;
 }
 
 .header__search {
@@ -1416,11 +1404,6 @@ a:hover .arrow {
   display: none;
   width: 24px;
   height: 24px;
-  -webkit-transition: -webkit-transform 0.25s ease;
-  transition: -webkit-transform 0.25s ease;
-  -o-transition: transform 0.25s ease;
-  transition: transform 0.25s ease;
-  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
 }
 
 .header__burger img {
@@ -1428,14 +1411,6 @@ a:hover .arrow {
   height: 100%;
   -o-object-fit: contain;
   object-fit: contain;
-}
-
-.header__search:hover,
-.header__logo:hover,
-.header__burger:hover {
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
 }
 
 .header__tel {
